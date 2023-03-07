@@ -13,3 +13,5 @@ fetch('https://movie-database-alternative.p.rapidapi.com/?s=Avengers%20Endgame&r
 
 
 console.log(options);
+
+console.log("hello");

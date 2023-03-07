@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/CSS/style.css" />
     <title>The Movie Matrix</title>
 </head>
 <body>
+
+<!--header-->
     <header>
-    <section>
-        <h1 id = title>The Movie Matrix</h1>
-       
-        <form id="form" > 
-             <h3 id="Intro">Search for a movie</h3>
-            <input type="text" id="query" name="search" placeholder="Search..." aria-label="search by movie-name">
+        <h1 id="title">The Movie Matrix</h1>
+        <div class="searchContainer">
+            <h3 id="intro">Search for a movie</h3>
+            <input type="text" id="searchQuery" name="search" placeholder="Search..." aria-label="search by movie-name">
             <button id="searchBtn">Search</button>
-        </form>           
-           
-    </section>
+        </div>
     </header>
+
+
+<!--main container to hold movie data-->
+    <main>
+        <div class="moviePoster">
+            <img src="" alt="moviePoster">
+        </div>
+    </main>
+
+    <script src="assets/javascript/script.js"></script>
 </body>
 </html>
