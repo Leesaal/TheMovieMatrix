@@ -21,9 +21,32 @@
 
 
 <!--main container to hold movie data-->
-    <main>
-        <div class="moviePoster">
-            <img src="" alt="moviePoster">
+    <main class="hide">
+        <div class="poster">
+<!--fetch the poster image from the Movie Database API-->
+            <img src="" id="moviePoster">
+        </div>
+        <div class="movieData">
+            <div class="title">
+<!--fetch the movie title from the Movie Database API-->
+                <h3 id="movieTitle"></h3>
+            </div>
+            <div class="plot">
+<!--fetch the movie plot from the Movie Database API-->
+                <p id="moviePlot"></p>
+            </div>   
+            <div class="rating">
+<!--fetch the movie rating from the Movie Database API-->
+                <p id="movieRating"></p>
+            </div>
+            <div class="actors">
+<!--fetch the movie actors from the Movie Database API-->
+                <p id="movieActors"></p>
+            </div>
+        </div> 
+<!--fetch the trailer from the Youtube API-->
+        <div class="trailer" id="movieTrailer">
+
         </div>
     </main>
 
