@@ -14,4 +14,9 @@ fetch('https://movie-database-alternative.p.rapidapi.com/?s=Avengers%20Endgame&r
 
 console.log(options);
 
-console.log("hello");
+// API key - Youtube: AIzaSyDHsLb_SBg7wWIzPQuf-8DLQcGRS7oOHrY
+
+    fetch('https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=AIzaSyDHsLb_SBg7wWIzPQuf-8DLQcGRS7oOHrY&part=snippet,contentDetails,statistics,status')
+	.then(response => response.json())
+	.then(response => console.log(response));
+	
