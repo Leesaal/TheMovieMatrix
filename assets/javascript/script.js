@@ -1,3 +1,6 @@
+
+
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -41,3 +44,4 @@ fetch("https://api.themoviedb.org/3/movie/"
 .then(response => console.log(response));
 
 var posterURL = "https://image.tmdb.org/t/p/w500/";
+var test = 0;
