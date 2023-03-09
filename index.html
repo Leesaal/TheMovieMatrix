@@ -5,19 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/CSS/style.css" />
+    
     <title>The Movie Matrix</title>
 </head>
-<body>
+<body class="bg-zinc-900">
 
 <!--header-->
-    <header>
-        <h1 id="title">The Movie Matrix</h1>
-        <div class="searchContainer">
-            <h3 id="intro">Search for a movie</h3>
-            <input type="text" id="searchQuery" name="search" placeholder="Search..." aria-label="search by movie-name">
-            <button id="searchBtn">Search</button>
+
+<!--navigation-->
+<nav class="relative container mx-auto p-2 bg-white-500">
+    <!--flex container-->
+    <div class="flex items-center justify-between">
+        <!--logo-->
+        <div class="pt-2">
+            <img src="assets/images/Logo image.png" height="40px" width="60px"alt="">
         </div>
-    </header>
+        <!--menu item-->
+        <div class="hidden md:flex space-x-6">
+            <a href="#" class="font-bold hover:text-slate-600 ">Home</a>
+            <a href="#" class="font-bold hover:text-slate-600">About Us</a>
+
+        </div>
+    </div>
+</nav>
+    <div>
+        <header>
+            <h1 class ="text-white flex" id="title">The Movie Matrix</h1>
+            <h3>Search here for a movie</h3>
+            
+        </header>
+
+        <section id="hero" class="flex">
+            <div class="container">
+                <input type="text" id="searchQuery" name="search" placeholder="Search..." aria-label="search by movie-name">
+                <button id="searchBtn"class = "p-3 px-6 pt-2 text-white bg-slate-800 rounded hover:bg-slate-500 border-solid ring-2 ring-white">Search</button>
+            </div>
+            
+        </section>
+</div>
+   
 
 
 <!--main container to hold movie data-->
@@ -49,7 +75,13 @@
 
         </div>
     </main>
+    <footer class="bg-zinc-800">
+        <p class = "">
+            &lt;&lt;&lt;&copy; The Movie Matrix &gt;&gt;&gt;
+        </p>
+    </footer>
 
     <script src="assets/javascript/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>
