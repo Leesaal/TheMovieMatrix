@@ -6,7 +6,15 @@ const options = {
 	}
 };
 
-fetch('https://movie-database-alternative.p.rapidapi.com/?s=Avengers%20Endgame&r=json&page=1', options)
+// create function to amend user input into url friendly format
+
+var name = "White Chicks";
+name = name.trim();
+name = name.replace(" ", "%20");
+
+fetch("https://movie-database-alternative.p.rapidapi.com/?s="
++ name 
++ "&r=json&page=1", options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
@@ -20,3 +28,16 @@ console.log(options);
 	.then(response => response.json())
 	.then(response => console.log(response));
 	
+// second movie database API
+
+var secondAPIKey = "97c267f9a2d9d89d1419f2261423af96";
+
+fetch("https://api.themoviedb.org/3/movie/"
++ imdbID
++ "?api_key="
++ secondAPIKey
++ "&language=en-US")
+.then(response => response.json())
+.then(response => console.log(response));
+
+var posterURL = "https://image.tmdb.org/t/p/w500/";
