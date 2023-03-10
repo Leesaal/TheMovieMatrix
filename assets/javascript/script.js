@@ -1,9 +1,11 @@
-var Poster = document.getElementById('moviePoster');
+var moviePoster = document.getElementById('moviePoster');
 var movieTitle = document.getElementById('movieTitle');
 var searchBtn = document.getElementById("searchBtn");
 var moviePlot = document.getElementById('moviePlot');
 var movieRating = document.getElementById('movieRating');
-var actors = document.getElementById('movieActors');
+var movieRuntime = document.getElementById('movieRuntime');
+var movieGenre = document.getElementById('movieGenre');
+var posterURL = "https://image.tmdb.org/t/p/w500/"
 
 searchBtn.addEventListener("click", function(event) {
 	event.preventDefault();
@@ -44,11 +46,11 @@ fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 	var movieTitleResults = data.Search[0].Title;
 	console.log(movieTitleResults);
 
-	var originalMovieName = document.getElementById("searchQuery").value.trim();
-	 if (movieTitleResults==movieTitleResults) {
+	// var originalMovieName = document.getElementById("searchQuery").value.trim();
+	//  if (movieTitleResults==originalMovieName) 
 	var imdbIDKey = data.Search[0].imdbID;
 	  console.log(imdbIDKey);
-	}
+	
 
 //second movie database API
 
@@ -65,7 +67,16 @@ fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 		  .then(function (data) {
 			console.log(data);
 
-		var posterURL = "https://image.tmdb.org/t/p/w500/"
+	movieTitle.textContent ="Movie Title: " + data.original_title;
+	movieGenre.textContent = "Genre: " + data.genres[0].name;
+	moviePlot.textContent = "Plot: " + data.overview;
+	console.log(moviePlot);
+	movieRating.textContent = "Rating: " + Math.round(data.popularity)+ "%";
+	console.log(movieRating);
+	movieRuntime.textContent ="Runtime: " + data.runtime + " minutes";
+	moviePoster.setAttribute("src",posterURL+data.poster_path);
+		
+
 
 
 	
