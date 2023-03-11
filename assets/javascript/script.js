@@ -7,6 +7,9 @@ var movieRuntime = document.getElementById('movieRuntime');
 var movieGenre = document.getElementById('movieGenre');
 var posterURL = "https://image.tmdb.org/t/p/w500/"
 
+
+
+
 searchBtn.addEventListener("click", function(event) {
 	event.preventDefault();
 
@@ -19,7 +22,7 @@ const options = {
 	
 };
 
-// create function to amend user input into url friendly format
+// Create function to amend user input into url friendly format
 	var imdbIDKey;
 	var movieName = document.getElementById("searchQuery").value;
 	movieName = movieName.trim();
@@ -31,9 +34,6 @@ const options = {
 fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 + movieName 
 + "&r=json&page=1", options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
 
 
 // console.log(options);
@@ -75,10 +75,24 @@ fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 	console.log(movieRating);
 	movieRuntime.textContent ="Runtime: " + data.runtime + " minutes";
 	moviePoster.setAttribute("src",posterURL+data.poster_path);
+
+
+	//If no movie entered or name of movie is incorrect, send alert (to be replaced by module) to enter a name of movie
+
+	if (movieName === "" || movieName === null) {
+		//send alert (to be replaced by module) if search is incorrect or empty
+		alert("Enter name of the Movie");
+		event.preventDefault();
+		console.log("It works");
+	} else {
+		// If movieName is valid, display currentMovie 
+
+		searchHistory(movieName);
+		currentMovie(movieName);
+		console.log("it works");
+	}
+	return movieName;
 		
-
-
-
 	
 });
 });
