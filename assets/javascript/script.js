@@ -1,3 +1,4 @@
+// Global Variables
 var moviePoster = document.getElementById('moviePoster');
 var movieTitle = document.getElementById('movieTitle');
 var searchBtn = document.getElementById("searchBtn");
@@ -12,7 +13,7 @@ var posterURL = "https://image.tmdb.org/t/p/w500/"
 
 searchBtn.addEventListener("click", function(event) {
 	event.preventDefault();
-
+// Options object witht the headers to access RapidAPI and Movie Database
 const options = {
 	method: 'GET',
 	headers: {
@@ -25,34 +26,35 @@ const options = {
 // Create function to amend user input into url friendly format
 	var imdbIDKey;
 	var movieName = document.getElementById("searchQuery").value;
-	movieName = movieName.trim();
-	movieName = movieName.replace(" ", "%20");
+	movieName = movieName.trim(); //Trim whitespaces from the query
+	movieName = movieName.replace(" ", "%20"); // Replaces spaces with %20
 	console.log(movieName);
 
-// first movie database API for imdbID
+// First API call to The Movie Database for Title and imdbID
 
 fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 + movieName 
 + "&r=json&page=1", options)
-
-
 // console.log(options);
+
+// Parse the response to json
 .then(function (response) {
 	return response.json();
   })
   .then(function (data) {
 	console.log(data);
  
+	// Get Title from the first Search result
 	var movieTitleResults = data.Search[0].Title;
 	console.log(movieTitleResults);
 
-	// var originalMovieName = document.getElementById("searchQuery").value.trim();
-	//  if (movieTitleResults==originalMovieName) 
+	// Get the imdbIDKey from the first Search result
+
 	var imdbIDKey = data.Search[0].imdbID;
 	  console.log(imdbIDKey);
 	
 
-//second movie database API
+// Second API call to The Movie Database
 
 		var secondAPIKey = "97c267f9a2d9d89d1419f2261423af96";
 
@@ -61,11 +63,14 @@ fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 		+ "?api_key="
 		+ secondAPIKey
 		+ "&language=en-US")
+	// Parse the response to json
 		.then(function (response) {
 			return response.json();
 		  })
 		  .then(function (data) {
 			console.log(data);
+
+// Get Movie Title, Genre, Plot, Rating and Runtime from the fetch response
 
 	movieTitle.textContent ="Movie Title: " + data.original_title;
 	movieGenre.textContent = "Genre: " + data.genres[0].name;
