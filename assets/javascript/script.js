@@ -10,6 +10,47 @@ var posterURL = "https://image.tmdb.org/t/p/w500/";
 savedSearches= [];
 
 
+// Youtube API key and var for selecting div for videos
+// when one API key does not work, comment the one out and use the other
+var youtubeAPIKey = "AIzaSyDHsLb_SBg7wWIzPQuf-8DLQcGRS7oOHrY";
+// var youtubeAPIKey = "AIzaSyD1d0IlIgmBa6d4rpnQmNGZxktmqOrQ3b8";
+
+
+// add event listener for button
+
+//var searchBtn = document.getElementById("searchBtn");
+searchBtn.addEventListener("click", function(event) {
+	event.preventDefault();
+
+	var movieName = document.getElementById("searchQuery").value;
+	movieName = movieName.trim();
+	movieName = movieName.replace(" ", "%20");
+	videoSearch(youtubeAPIKey, movieName);
+})
+
+
+// Create fetch using "movie trailer" in the query to specify youtube request
+
+function videoSearch(APIkey, search) {
+
+	fetch("https://www.googleapis.com/youtube/v3/search?key="
+	+ youtubeAPIKey
+	+ "&type=video&part=snippet&maxResults=1&q=movie%20trailer%20"
+	+ search
+	)
+
+	.then(response => response.json())
+
+	.then(data => this.displayVideo(data));
+}
+
+function displayVideo(data) {
+	var { videoId } = data.items[0].id;
+	document.getElementById("trailer").src = 'https://www.youtube.com/embed/' + videoId ;
+	
+}
+
+
 
 //  This Function will make 2 API calls; from the first response we obtain the movie title and imdbIDKey, from the second call we get information about the movie like the rating and plot. This function will also display a message on the screen if the input is empty or incorrect
 
@@ -108,7 +149,7 @@ fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 };
 
 // Added Event Listener to searchBtn to call searchMovie function
-searchBtn.addEventListener("click", searchMovie, );
+searchBtn.addEventListener("click", searchMovie);
 
 
 
@@ -175,52 +216,4 @@ var loadSearchHistory = function() {
 };
 
 
-
-
-
-
-// Youtube API key and var for selecting div for videos
-
-var youtubeAPIKey = "AIzaSyD1d0IlIgmBa6d4rpnQmNGZxktmqOrQ3b8";
-
-
-// add event listener for button
-
-//var searchBtn = document.getElementById("searchBtn");
-searchBtn.addEventListener("click", function(event) {
-	event.preventDefault();
-
-	var searchQuery = document.getElementById("searchQuery").value;
-	searchQuery = searchQuery.trim();
-	searchQuery = searchQuery.replace(" ", "%20");
-	console.log(searchQuery);
-
-	videoSearch(youtubeAPIKey, searchQuery);
-})
-=
-
-// Create fetch using "movie trailer" in the query to specify youtube request
-
-function videoSearch(APIkey, search) {
-	fetch("https://www.googleapis.com/youtube/v3/search?key="
-	+ youtubeAPIKey
-	+ "&type=video&part=snippet&maxResults=1&q=movie%20trailer%20"
-	+ search
-	)
-	console.log("https://www.googleapis.com/youtube/v3/search?key="
-	+ youtubeAPIKey
-	+ "&type=video&part=snippet&maxResults=1&q=movie%20trailer%20"
-	+ search
-	);
-}
-// 	.then(response => response.json())
-
-// 	.then(data => this.displayVideo(data));
-// }
-
-function displayVideo(data) {
-	var { videoId } = data.items[0].id;
-	document.getElementById("trailer").src = 'https://www.youtube.com/embed/' + videoId ;
-	
-}
 
