@@ -11,9 +11,28 @@ savedSearches= [];
 
 
 
-// Added Event Listener to searchBtn. This Function will make 2 API calls; from the first response we obtain the movie title and imdbIDKey, from the second call we get information about the movie like the rating and plot. This function will also display a message on the screen if the input is empty or incorrect
-searchBtn.addEventListener("click", function(event) {
+//  This Function will make 2 API calls; from the first response we obtain the movie title and imdbIDKey, from the second call we get information about the movie like the rating and plot. This function will also display a message on the screen if the input is empty or incorrect
+
+var searchMovie = function (event) {
 	event.preventDefault();
+
+	//If no movie entered or name of movie is incorrect, send alert (to be replaced by module) to enter a name of movie
+
+	var movieName = document.getElementById("searchQuery").value;
+
+	if (movieName === "" || movieName === null) {
+		//send alert (to be replaced by module) if search is incorrect or empty
+		alert("Enter name of the Movie");
+		event.preventDefault();
+		console.log("It works");
+	} else {
+
+// If movieName is valid, display searchHistory function
+
+		searchHistory(movieName);
+		console.log("It works");
+	}
+	
 // Options object witht the headers to access RapidAPI and Movie Database
 const options = {
 	method: 'GET',
@@ -26,7 +45,6 @@ const options = {
 
 // Create function to amend user input into url friendly format
 	var imdbIDKey;
-	var movieName = document.getElementById("searchQuery").value;
 	movieName = movieName.trim(); //Trim whitespaces from the query
 	movieName = movieName.replace(" ", "%20"); // Replaces spaces with %20
 	console.log(movieName);
@@ -65,6 +83,7 @@ fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 		+ "?api_key="
 		+ secondAPIKey
 		+ "&language=en-US")
+
 // Parse the response to json
 		.then(function (response) {
 			return response.json();
@@ -84,25 +103,14 @@ fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 	moviePoster.setAttribute("src",posterURL+data.poster_path);
 
 
-//If no movie entered or name of movie is incorrect, send alert (to be replaced by module) to enter a name of movie
-
-	if (movieName === "" || movieName === null) {
-		//send alert (to be replaced by module) if search is incorrect or empty
-		alert("Enter name of the Movie");
-		event.preventDefault();
-		console.log("It works");
-	} else {
-
-// If movieName is valid, display searchHistory function
-
-		searchHistory(movieName);
-		console.log("It works");
-	}
-	return movieName;
-		
 });
 });
-});
+};
+
+// Added Event Listener to searchBtn to call searchMovie function
+searchBtn.addEventListener("click", searchMovie);
+
+
 
 
 // Create a search history list of the movies. It will also save the array of savedSearches on the local storage
