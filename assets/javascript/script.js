@@ -6,6 +6,7 @@ var moviePlot = document.getElementById('moviePlot');
 var movieRating = document.getElementById('movieRating');
 var movieRuntime = document.getElementById('movieRuntime');
 var movieGenre = document.getElementById('movieGenre');
+var main = document.querySelector('main');
 var posterURL = "https://image.tmdb.org/t/p/w500/";
 savedSearches= [];
 
@@ -21,6 +22,8 @@ var youtubeAPIKey = "AIzaSyDHsLb_SBg7wWIzPQuf-8DLQcGRS7oOHrY";
 searchBtn.addEventListener("click", function(event) {
 	event.preventDefault();
 
+	main.classList.remove("hide");
+
 	var movieName = document.getElementById("searchQuery").value;
 	movieName = movieName.trim();
 	movieName = movieName.replace(" ", "%20");
@@ -30,7 +33,10 @@ searchBtn.addEventListener("click", function(event) {
 
 // Create fetch using "movie trailer" in the query to specify youtube request
 
-function videoSearch(API, search) {
+
+
+
+function videoSearch(APIkey, search) {
 
 	fetch("https://www.googleapis.com/youtube/v3/search?key="
 	+ youtubeAPIKey
@@ -39,7 +45,6 @@ function videoSearch(API, search) {
 	)
 
 	.then(response => response.json())
-
 	.then(data => this.displayVideo(data));
 }
 
