@@ -11,8 +11,9 @@ savedSearches= [];
 
 
 // Youtube API key and var for selecting div for videos
-
-var youtubeAPIKey = "AIzaSyD1d0IlIgmBa6d4rpnQmNGZxktmqOrQ3b8";
+// when one API key does not work, comment the one out and use the other
+var youtubeAPIKey = "AIzaSyDHsLb_SBg7wWIzPQuf-8DLQcGRS7oOHrY";
+// var youtubeAPIKey = "AIzaSyD1d0IlIgmBa6d4rpnQmNGZxktmqOrQ3b8";
 
 
 // add event listener for button
@@ -24,7 +25,6 @@ searchBtn.addEventListener("click", function(event) {
 	var movieName = document.getElementById("searchQuery").value;
 	movieName = movieName.trim();
 	movieName = movieName.replace(" ", "%20");
-	console.log(movieName);
 	videoSearch(youtubeAPIKey, movieName);
 })
 
@@ -32,16 +32,17 @@ searchBtn.addEventListener("click", function(event) {
 // Create fetch using "movie trailer" in the query to specify youtube request
 
 function videoSearch(APIkey, search) {
+
 	fetch("https://www.googleapis.com/youtube/v3/search?key="
 	+ youtubeAPIKey
 	+ "&type=video&part=snippet&maxResults=1&q=movie%20trailer%20"
 	+ search
 	)
-}
-// 	.then(response => response.json())
 
-// 	.then(data => this.displayVideo(data));
-// }
+	.then(response => response.json())
+
+	.then(data => this.displayVideo(data));
+}
 
 function displayVideo(data) {
 	var { videoId } = data.items[0].id;
@@ -213,8 +214,6 @@ var loadSearchHistory = function() {
         searchHistory(savedSearchHistory[i]);
     }
 };
-
-
 
 
 
