@@ -16,9 +16,8 @@ var youtubeAPIKey = "AIzaSyDHsLb_SBg7wWIzPQuf-8DLQcGRS7oOHrY";
 // var youtubeAPIKey = "AIzaSyD1d0IlIgmBa6d4rpnQmNGZxktmqOrQ3b8";
 
 
-// add event listener for button
+// Add event listener for button
 
-//var searchBtn = document.getElementById("searchBtn");
 searchBtn.addEventListener("click", function(event) {
 	event.preventDefault();
 
@@ -26,12 +25,12 @@ searchBtn.addEventListener("click", function(event) {
 	movieName = movieName.trim();
 	movieName = movieName.replace(" ", "%20");
 	videoSearch(youtubeAPIKey, movieName);
-})
+});
 
 
 // Create fetch using "movie trailer" in the query to specify youtube request
 
-function videoSearch(APIkey, search) {
+function videoSearch(API, search) {
 
 	fetch("https://www.googleapis.com/youtube/v3/search?key="
 	+ youtubeAPIKey
@@ -54,7 +53,7 @@ function displayVideo(data) {
 
 //  This Function will make 2 API calls; from the first response we obtain the movie title and imdbIDKey, from the second call we get information about the movie like the rating and plot. This function will also display a message on the screen if the input is empty or incorrect
 
-var searchMovie = function (event) {
+function searchMovie (movieName){
 	event.preventDefault();
 
 	//If no movie entered or name of movie is incorrect, send alert (to be replaced by module) to enter a name of movie
@@ -143,7 +142,6 @@ fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 	movieRuntime.textContent ="Runtime: " + data.runtime + " minutes";
 	moviePoster.setAttribute("src",posterURL+data.poster_path);
 
-
 });
 });
 };
@@ -157,9 +155,9 @@ searchBtn.addEventListener("click", searchMovie);
 // Create a search history list of the movies. It will also save the array of savedSearches on the local storage
 function searchHistory(movieName) {
 	// Remove existing search history entries that contain the current movieName
-	// document.querySelectorAll('.past-search[data-movie-name="' + movieName + '"]').forEach(function(elem) {
-	//   elem.remove();
-	// });
+	document.querySelectorAll('.past-search[data-movie-name="' + movieName + '"]').forEach(function(elem) {
+	  elem.remove();
+	});
   
 	// Create new search history entry
 	var searchHistoryEntry = document.createElement("p");
@@ -167,9 +165,6 @@ function searchHistory(movieName) {
 	searchHistoryEntry.setAttribute("data-movie-name", movieName);
 	searchHistoryEntry.textContent = movieName;
   
-	// // Add the new search history entry to the search history list
-	// var searchHistoryContainer = document.querySelector(".search-history");
-	// searchHistoryContainer.appendChild(searchHistoryEntry);
   
 	// Container for movie entry: create <div> element with a "past-search-container" class and append movie entry to the Container
 	var searchEntryContainer = document.createElement("div");
@@ -197,7 +192,7 @@ function searchHistory(movieName) {
   
 
 // Load saved search history entries from local storage and display it to the search history container
-var loadSearchHistory = function() {
+function loadSearchHistory (movieName) {
     // Get from local storage saved search history and assign it to the savedSearchHistory variable
     var savedSearchHistory = localStorage.getItem("savedSearches");
 
@@ -217,3 +212,16 @@ var loadSearchHistory = function() {
 
 
 
+document.getElementById("search-history-container").addEventListener("click", function (event){
+	//Check if the clicked element is a <p> tag
+	if (event.target.tagName==="P"){
+		// Get the text content of the clicked <p> element
+		var previousMovieName = event.target.textContent;
+
+		searchHistory(previousMovieName);
+		loadSearchHistory(previousMovieName);
+
+		event.target.remove();
+
+	}
+});
