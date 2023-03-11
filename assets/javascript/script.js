@@ -6,11 +6,12 @@ var moviePlot = document.getElementById('moviePlot');
 var movieRating = document.getElementById('movieRating');
 var movieRuntime = document.getElementById('movieRuntime');
 var movieGenre = document.getElementById('movieGenre');
-var posterURL = "https://image.tmdb.org/t/p/w500/"
+var posterURL = "https://image.tmdb.org/t/p/w500/";
+savedSearches= [];
 
 
 
-// Added Event Listener to searchBtn
+// Added Event Listener to searchBtn. This Function will make 2 API calls; from the first response we obtain the movie title and imdbIDKey, from the second call we get information about the movie like the rating and plot. This function will also display a message on the screen if the input is empty or incorrect
 searchBtn.addEventListener("click", function(event) {
 	event.preventDefault();
 // Options object witht the headers to access RapidAPI and Movie Database
@@ -104,11 +105,12 @@ fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 });
 
 
+// Create a search history list of the movies. It will also save the array of savedSearches on the local storage
 function searchHistory(movieName) {
 	// Remove existing search history entries that contain the current movieName
-	document.querySelectorAll('.past-search[data-movie-name="' + movieName + '"]').forEach(function(elem) {
-	  elem.remove();
-	});
+	// document.querySelectorAll('.past-search[data-movie-name="' + movieName + '"]').forEach(function(elem) {
+	//   elem.remove();
+	// });
   
 	// Create new search history entry
 	var searchHistoryEntry = document.createElement("p");
@@ -116,9 +118,9 @@ function searchHistory(movieName) {
 	searchHistoryEntry.setAttribute("data-movie-name", movieName);
 	searchHistoryEntry.textContent = movieName;
   
-	// Add the new search history entry to the search history list
-	var searchHistoryContainer = document.querySelector(".search-history");
-	searchHistoryContainer.appendChild(searchHistoryEntry);
+	// // Add the new search history entry to the search history list
+	// var searchHistoryContainer = document.querySelector(".search-history");
+	// searchHistoryContainer.appendChild(searchHistoryEntry);
   
 	// Container for movie entry: create <div> element with a "past-search-container" class and append movie entry to the Container
 	var searchEntryContainer = document.createElement("div");
@@ -144,6 +146,29 @@ function searchHistory(movieName) {
 	document.getElementById("searchQuery").value = "";
   };
   
+
+// Load saved search history entries from local storage and display it to the search history container
+var loadSearchHistory = function() {
+    // Get from local storage saved search history and assign it to the savedSearchHistory variable
+    var savedSearchHistory = localStorage.getItem("savedSearches");
+
+    // If there is no previous saved searches, return false (no search history data to display)
+    if (!savedSearchHistory) {
+        return false;
+    }
+
+    // Convert saved search history string into array
+    savedSearchHistory = JSON.parse(savedSearchHistory);
+
+    // For loop savedSearchHistory array and make entry for each item in the list
+    for (var i = 0; i < savedSearchHistory.length; i++) {
+        searchHistory(savedSearchHistory[i]);
+    }
+};
+
+
+
+
 
 
 // Youtube API key and var for selecting div for videos
