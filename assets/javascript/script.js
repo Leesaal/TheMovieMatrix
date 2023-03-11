@@ -1,4 +1,3 @@
-//Global Variables
 var moviePoster = document.getElementById('moviePoster');
 var movieTitle = document.getElementById('movieTitle');
 var searchBtn = document.getElementById("searchBtn");
@@ -8,62 +7,9 @@ var movieRuntime = document.getElementById('movieRuntime');
 var movieGenre = document.getElementById('movieGenre');
 var posterURL = "https://image.tmdb.org/t/p/w500/"
 
-
-
-// Event Listener when click on the button from the search div
-var searchBtn = document.getElementById("searchBtn");
-
-searchBtn.addEventListener("click", function (event){
+searchBtn.addEventListener("click", function(event) {
 	event.preventDefault();
 
-	// Get movie searched
-
-	var movieName = document.getElementById("search-input").value;
-	
-
-	//If no movie entered or name of movie is incorrect, send alert (to be replaced by module) to enter a name of movie
-
-	if (movieName === "" || movieName === null) {
-		//send alert (to be replaced by module) if search is incorrect or empty
-		alert("Enter name of the Movie");
-		event.preventDefault();
-		console.log("It works");
-	} else {
-		// If movieName is valid, display currentMovie 
-
-		searchHistory(movieName);
-		currentMovie(movieName);
-		console.log("it works");
-	}
-	return movieName;
-}
-)
-
-function searchHistory(){
-
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function currentMovie (movieName) {
-	
-}
 const options = {
 	method: 'GET',
 	headers: {
@@ -182,4 +128,3 @@ function displayVideo(data) {
 	
 }
 
->>>>>>> 8f186d832b0fb0800965be287b58a5a437b806ce
