@@ -5,20 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/CSS/style.css" />
-    
     <title>The Movie Matrix</title>
 </head>
-<body class="bg-zinc-900">
+<body class="bg-zinc-900 px-8 py-6">
 
 <!--header-->
 
 <!--navigation-->
-<nav class="relative container mx-auto p-2 bg-white-500">
+<nav class="relative container mx-auto p-2">
     <!--flex container-->
     <div class="flex items-center justify-between">
         <!--logo-->
         <div class="pt-2">
-            <img src="assets/images/Logo image.png" height="40px" width="60px"alt="">
+            <img src="assets/images/Logo-image.png" height="40px" width="60px"alt="">
         </div>
         <!--menu item-->
         <div class="hidden md:flex space-x-6">
@@ -30,15 +29,28 @@
 </nav>
     <div>
         <header>
+        <div class="grid gap-2 item-start justify-center">
             <h1 class ="text-white flex" id="title">The Movie Matrix</h1>
             <h3>Search here for a movie</h3>
+            <br>
+        </div>
             
         </header>
 
         <section id="hero" class="flex">
             <div class="container">
-                <input type="text" id="search-input" name="search" placeholder="Search..." aria-label="search by movie-name">
-                <button id="searchBtn"class = "p-3 px-6 pt-2 text-white bg-slate-800 rounded hover:bg-slate-500 border-solid ring-2 ring-white">Search</button>
+                <form id="form">
+                    
+                <div class="grid gap-4 item-start justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-pink-600 to-blue-600 rounded-lg blur opacity-75 hover:opacity-100 -inset-2 transition duration-1000"></div>
+                    <!-- <img src="assets/images/Logo-image.png" class="flex container h-6 w-6 alt="icon"> -->
+                    <input class="relative bg-zinc-900 px-7 py-4 rounded-lg leading-none flex items-center" type="text" id="searchQuery" name="search" placeholder="" aria-label="search by movie-name">
+                     </div>
+                    <button id="searchBtn"class = " items-center px-6 pt-1 text-white bg-zinc-800 rounded hover:bg-slate-800 border-solid ring-2 ring-black">Search</button>
+                </div>
+                </div>
+                </form>
             </div>
             
         </section>
@@ -47,12 +59,14 @@
 
 
 <!--main container to hold movie data-->
-    <main class="hide">
-        <div class="poster">
+<main class="hide in justify-center">  
+        <div class="poster w-48">
 <!--fetch the poster image from the Movie Database API-->
-            <img src="" id="moviePoster">
+            
         </div>
-        <div class="movieData">
+    <img src="" id="moviePoster" class="block rounded w-48" >
+    <section class="movieInfo inline-block">
+        <div class="">
             <div class="title">
 <!--fetch the movie title from the Movie Database API-->
                 <h3 id="movieTitle"></h3>
@@ -65,15 +79,24 @@
 <!--fetch the movie rating from the Movie Database API-->
                 <p id="movieRating"></p>
             </div>
-            <div class="actors">
-<!--fetch the movie actors from the Movie Database API-->
-                <p id="movieActors"></p>
+            <div class="runtime">
+<!--fetch the movie runtime from the Movie Database API-->
+                <p id="movieRuntime"></p>
+            </div>
+            <div class="genre">
+<!--fetch the genre from the Movie Database API-->
+                <p id="movieGenre"></p>
             </div>
         </div> 
 <!--fetch the trailer from the Youtube API-->
-        <div class="trailer" id="movieTrailer">
 
+        <div class="trailer container flex float-right rounded ring-2 w-1/3" id="movieTrailer" class="">
+            <iframe width="560" height="215" src="" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen id="trailer"></iframe>
         </div>
+    </section>
+
     </main>
     <footer class="bg-zinc-800">
         <p class = "">
@@ -83,5 +106,6 @@
 
     <script src="assets/javascript/script.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    
 </body>
 </html>
