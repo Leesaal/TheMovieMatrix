@@ -22,7 +22,6 @@ var spanModal = document.getElementsByClassName("close")[0]; //close modal
 searchBtn.addEventListener("click", function (event){
 	event.preventDefault();
 	var movieName = document.getElementById("searchQuery").value;
-	console.log(movieName);
 
 //show modal if search is empty
 	if (movieName === "" || movieName === null) {
@@ -30,7 +29,7 @@ searchBtn.addEventListener("click", function (event){
 
 		// When the user clicks on <span> (x), close the modal
 		spanModal.onclick = function() {
-		modal.style.display = "none";
+		modal.classList.add("hide");
 		}
 
 		event.preventDefault();
