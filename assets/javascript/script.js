@@ -20,7 +20,22 @@ savedSearches= [];
 		
 
 
+
 		var movieName = document.getElementById("searchQuery").value;
+
+
+// unhide main to show movie elements
+
+	main.classList.remove("hide");
+
+// create movieName variable to push through to videoDisplay function
+
+	var movieName = document.getElementById("searchQuery").value;
+	movieName = movieName.trim();
+	movieName = movieName.replace(" ", "%20");
+	videoSearch(youtubeAPIKey, movieName);
+})
+
 
 		if (movieName === "" || movieName === null) {
 			//send alert (to be replaced by module) if search is incorrect or empty

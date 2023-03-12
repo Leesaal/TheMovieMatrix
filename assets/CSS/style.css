@@ -87,4 +87,7 @@ footer {
 } 
 
 
+#search-history-container {
+    text-transform: capitalize;
+}
 
