@@ -67,10 +67,15 @@ var searchMovie = function (event) {
 	var movieName = document.getElementById("searchQuery").value;
 
 	if (movieName === "" || movieName === null) {
-		//send alert (to be replaced by module) if search is incorrect or empty
-		alert("Enter name of the Movie");
+		//show modal if search is incorrect or empty
+		modal.classList.remove("hide");
+
+		// When the user clicks on <span> (x), close the modal
+		spanModal.onclick = function() {
+			modal.style.display = "none";
+		}
+
 		event.preventDefault();
-		console.log("It works");
 	} else {
 
 // If movieName is valid, display searchHistory function
@@ -221,4 +226,30 @@ var loadSearchHistory = function() {
 };
 
 
+
+
+// Get the modal
+var modal = document.querySelector(".modal");
+var modalBtn = document.getElementById("searchBtn");
+var spanModal = document.getElementsByClassName("close")[0]; //close modal
+
+// // When the user clicks the search button, open the modal if film name not found
+// searchBtn.addEventListener("click", modalShow);
+
+// function modalShow() {
+// 	if (movieName === "") {
+// 	modal.classList.remove("hide");
+// 	// if (movieName === "") {
+//     // if (movieName == true) {
+//     //     modal.style.display = "none";
+	
+//     // } else { 
+// 	// 	return;
+//     }
+// }
+
+// // // When the user clicks on <span> (x), close the modal
+// spanModal.onclick = function() {
+//     modal.style.display = "none";
+// }
 
