@@ -15,6 +15,7 @@
 
 	searchBtn.addEventListener("click", function (event){
 		event.preventDefault();
+		
 
 		var movieName = document.getElementById("searchQuery").value;
 
