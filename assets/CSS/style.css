@@ -8,10 +8,16 @@ body {
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
+    background-image:linear-gradient(rgb(0, 0, 0),rgb(110, 68, 68), rgb(0, 14, 87)); 
 }
 
 a {
-    font-size:16px;
+    font-size: 14px;
+}
+
+a:hover {
+    font-size: 16px;
+    
 }
 header h1 {
     font-size: 50px;
@@ -19,10 +25,12 @@ header h1 {
     align-items: center;
     justify-content: center;
     
+    
+    
 }
-
-
-
+.titleContainer {
+    width:60%;
+}
 div header {
     
 	width:100%;
@@ -40,7 +48,11 @@ div header {
 main {
     font-size: large
 }
-    
+
+button {
+    align-text:center;
+} 
+
 /* section div input {
     
 	align-items: center;
@@ -62,18 +74,7 @@ main {
     align-items: center;
 }
 
-button {
-    position: relative;
-    display: block;
-	align-items: center;
-    left:50%;
-	transform: translateX(-50%);
-    width:10%;
-    height:30%
-    border:2px solid rgb(173, 198, 230);
-    font-size:15px;
-    margin-top: 10px;
-} */
+
 
 footer {
     margin-top:auto;
@@ -97,11 +98,15 @@ main {
     margin-top: 10%;
 }
 
-#moviePoster {
+.footer {
+    align-text:center;
+}
+
+/* #moviePoster {
     width: 30%;
     height: 30%;
     margin: auto;
-}
+} */
 
 .movieInfo {
     float: right;
