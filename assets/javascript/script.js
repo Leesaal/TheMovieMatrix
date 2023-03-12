@@ -38,7 +38,6 @@ searchBtn.addEventListener("click", function (event){
 	var movieName = document.getElementById("searchQuery").value;
 	movieName = movieName.trim();
 	movieName = movieName.replace(" ", "%20");
-	console.log(movieName);
 	videoSearch(youtubeAPIKey, movieName);
 	searchMovie(movieName);
 	searchHistory(movieName);
@@ -65,16 +64,20 @@ searchBtn.addEventListener("click", function (event){
 		movieName = movieName.replace(" ", "%20"); // Replaces spaces with %20
 		
 	// First API call to The Movie Database for Title and imdbID
-		fetch("https://movie-database-alternative.p.rapidapi.com/?s="
+
+	fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 		+ movieName 
-		+ "&r=json&page=1", options)
-		
+		+ "&r=json&page=1", options) 
+
 	// Parse the response to json
 		.then(function (response) {
 			return response.json();
 		})
 		.then(function (data) {
-		
+
+	// check input is valid
+			if (data.hasOwnProperty("Search")) {
+
 	// Get Title from the first Search result
 		var movieTitleResults = data.Search[0].Title;
 
@@ -104,13 +107,19 @@ searchBtn.addEventListener("click", function (event){
 		movieRating.textContent = "Rating: " + Math.round(data.popularity)+ "%";
 		movieRuntime.textContent ="Runtime: " + data.runtime + " minutes";
 		moviePoster.setAttribute("src",posterURL+data.poster_path);	
-		});
-		});
-		};
 		
+		});
 
-		
-
+		// show modal if input is not a valid movie name
+			} else {
+				modal.classList.remove("hide");
+				spanModal.onclick = function() {
+				modal.classList.add("hide");
+				main.classList.add("hide");
+				}
+		}}
+		)};
+	
 		// API Call to get Video Trailer //
 
 		var youtubeAPIKey = "AIzaSyDM84Q5kKRoiKTM5XfoP7L8PCpL5im6eXU";
