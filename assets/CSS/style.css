@@ -86,6 +86,7 @@ footer {
     display: none;
 } 
 
+
 #search-history-container {
     text-transform: capitalize;
 }
@@ -109,3 +110,4 @@ main {
 .trailer {
     float: left;
 }
+
