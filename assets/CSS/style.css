@@ -62,7 +62,7 @@ main {
 }
 
 button {
-    align-text: center;
+    text-align: left;
 } 
 
 /* section div input {
