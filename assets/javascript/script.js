@@ -27,6 +27,7 @@ searchBtn.addEventListener("click", function (event){
 		// When the user clicks on <span> (x), close the modal
 		spanModal.onclick = function() {
 		modal.classList.add("hide");
+		
 		}
 
 		event.preventDefault();
@@ -35,12 +36,8 @@ searchBtn.addEventListener("click", function (event){
 // If movieName is valid, display searchHistory function, create movieName variable to call movie data functions and unhide main to show movie elements
 	main.classList.remove("hide");
 
-	var movieName = document.getElementById("searchQuery").value;
-	movieName = movieName.trim();
-	movieName = movieName.replace(" ", "%20");
-	videoSearch(youtubeAPIKey, movieName);
 	searchMovie(movieName);
-	searchHistory(movieName);
+	
 
 	}
 
@@ -107,7 +104,8 @@ searchBtn.addEventListener("click", function (event){
 		movieRating.textContent = "Rating: " + Math.round(data.popularity)+ "%";
 		movieRuntime.textContent ="Runtime: " + data.runtime + " minutes";
 		moviePoster.setAttribute("src",posterURL+data.poster_path);	
-		
+		videoSearch(youtubeAPIKey, movieName);
+		searchHistory(movieName);		
 		});
 
 		// show modal if input is not a valid movie name
@@ -115,14 +113,13 @@ searchBtn.addEventListener("click", function (event){
 				modal.classList.remove("hide");
 				spanModal.onclick = function() {
 				modal.classList.add("hide");
-				main.classList.add("hide");
 				}
 		}}
 		)};
 	
 		// API Call to get Video Trailer //
 
-		var youtubeAPIKey = "AIzaSyDM84Q5kKRoiKTM5XfoP7L8PCpL5im6eXU";
+		var youtubeAPIKey = "AIzaSyCwgbAu1Gc2IwjwgERI4QF7O9pogMLMmo4";
 		searchBtn.addEventListener("click", function(event) {
 			event.preventDefault();
 		
@@ -145,7 +142,8 @@ searchBtn.addEventListener("click", function (event){
 		
 		function displayVideo(data) {
 			var { videoId } = data.items[0].id;
-			document.getElementById("trailer").src = 'https://www.youtube.com/embed/' + videoId ;		
+			document.getElementById("trailer").src = 'https://www.youtube.com/embed/' + videoId ;
+			
 		}
 
 
@@ -266,6 +264,7 @@ searchBtn.addEventListener("click", function (event){
 	// // when one API key does not work, comment the one out and use the other
 	// var youtubeAPIKey = "AIzaSyDHsLb_SBg7wWIzPQuf-8DLQcGRS7oOHrY";
 	// // var youtubeAPIKey = "AIzaSyD1d0IlIgmBa6d4rpnQmNGZxktmqOrQ3b8";
+	// var youtubeAPIKey = "AIzaSyCwgbAu1Gc2IwjwgERI4QF7O9pogMLMmo4";
 
 
 	// // Add event listener for button
