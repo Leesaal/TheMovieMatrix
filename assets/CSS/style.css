@@ -86,9 +86,11 @@ footer {
     display: none;
 } 
 
+
 #search-history-container {
     text-transform: capitalize;
 }
+
 
 main {
     display: flex;
@@ -110,3 +112,4 @@ main {
     float: left;
 
 }
+
