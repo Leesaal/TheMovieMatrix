@@ -1,14 +1,15 @@
 *{
-    font-family: monospace;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color-scheme: dark;
     color:white;
 
-    
+  
 }
 body {
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
-    background-image:linear-gradient(rgb(0, 0, 0),rgb(110, 68, 68), rgb(0, 14, 87)); 
+    background-image:linear-gradient(rgba(9, 9, 70, 0.896),rgb(56, 95, 116), rgb(0, 14, 87)); 
 }
 
 a {
