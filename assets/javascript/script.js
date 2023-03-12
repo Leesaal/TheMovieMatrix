@@ -1,13 +1,15 @@
-	// Global Variables
-	var moviePoster = document.getElementById('moviePoster');
-	var movieTitle = document.getElementById('movieTitle');
-	var searchBtn = document.getElementById("searchBtn");
-	var moviePlot = document.getElementById('moviePlot');
-	var movieRating = document.getElementById('movieRating');
-	var movieRuntime = document.getElementById('movieRuntime');
-	var movieGenre = document.getElementById('movieGenre');
-	var posterURL = "https://image.tmdb.org/t/p/w500/";
-	savedSearches= [];
+// Global Variables
+var moviePoster = document.getElementById('moviePoster');
+var movieTitle = document.getElementById('movieTitle');
+var searchBtn = document.getElementById("searchBtn");
+var moviePlot = document.getElementById('moviePlot');
+var movieRating = document.getElementById('movieRating');
+var movieRuntime = document.getElementById('movieRuntime');
+var movieGenre = document.getElementById('movieGenre');
+var main = document.querySelector('main');
+var posterURL = "https://image.tmdb.org/t/p/w500/";
+savedSearches= [];
+
 
 
 
@@ -16,6 +18,7 @@
 	searchBtn.addEventListener("click", function (event){
 		event.preventDefault();
 		
+
 
 		var movieName = document.getElementById("searchQuery").value;
 
@@ -191,7 +194,6 @@
 		
 
 		
-
 	// Load saved search history entries from local storage and display it to the search history container
 		
 	    function loadSearchHistory (movieName) {
@@ -211,7 +213,6 @@
 				searchHistory(savedSearchHistory[i]);
 			}
 		};
-
 
 
 

@@ -82,7 +82,9 @@ footer {
    
 }
 
-
+.hide {
+    display: none;
+} 
 
 
 
