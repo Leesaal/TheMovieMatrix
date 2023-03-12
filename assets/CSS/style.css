@@ -91,7 +91,7 @@ button {
 footer {
     margin-top:auto;
     width: 100%;
-    height: 2.5rem;
+    height: 0.5rem;
    
 } 
 
@@ -114,15 +114,15 @@ main {
     text-align:center;
 }
 
-/* #moviePoster {
+#moviePoster {
     width: 30%;
     height: 30%;
     margin: auto;
-} */
+} 
 
 .movieInfo {
     float: right;
-    margin: 50px;
+    
 }
 
 .trailer {
@@ -146,7 +146,7 @@ main {
     color: black;
 }
 
-span {
+.modalInfo span {
     float: right;
     border: 1px solid black;
     padding: 1px 6px;
@@ -156,6 +156,15 @@ span {
     background: white;
 }
 
-span:hover {
+.modalInfo span:hover {
     box-shadow: 2px 2px 1px 0.5px black;
+}
+
+p {
+
+}
+
+#movieTitle {
+    font-size: 26px;
+    font-style:
 }

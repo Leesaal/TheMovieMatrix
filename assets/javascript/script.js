@@ -98,11 +98,11 @@ searchBtn.addEventListener("click", function (event){
 		
 	// Get Movie Title, Genre, Plot, Rating and Runtime from the fetch response
 		
-		movieTitle.textContent ="Movie Title: " + data.original_title;
-		movieGenre.textContent = "Genre: " + data.genres[0].name;
-		moviePlot.textContent = "Plot: " + data.overview;
-		movieRating.textContent = "Rating: " + Math.round(data.popularity)+ "%";
-		movieRuntime.textContent ="Runtime: " + data.runtime + " minutes";
+		movieTitle.textContent =data.original_title;
+		movieGenre.textContent = data.genres[0].name;
+		moviePlot.textContent = data.overview;
+		movieRating.textContent = Math.round(data.popularity)+ "%";
+		movieRuntime.textContent = data.runtime + " minutes";
 		moviePoster.setAttribute("src",posterURL+data.poster_path);	
 		videoSearch(youtubeAPIKey, movieName);
 		searchHistory(movieName);		
