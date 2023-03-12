@@ -38,6 +38,10 @@ margin: auto;
 .titleContainer {
     width:60%;
 }
+
+.relative  {
+    width: 300px;
+}
 div header {
     
 	width:100%;
@@ -79,7 +83,7 @@ button {
     height:50%;
 	width:45%;
     align-items: center;
-}
+}*/
 
 
 
@@ -88,7 +92,7 @@ footer {
     width: 100%;
     height: 2.5rem;
    
-}
+} 
 
 .hide {
     display: none;
@@ -106,7 +110,7 @@ main {
 }
 
 .footer {
-    align-text:center;
+    text-align:center;
 }
 
 /* #moviePoster {
