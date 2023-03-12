@@ -34,22 +34,24 @@ savedSearches= [];
 	movieName = movieName.trim();
 	movieName = movieName.replace(" ", "%20");
 	videoSearch(youtubeAPIKey, movieName);
-})
 
-
-		if (movieName === "" || movieName === null) {
-			//send alert (to be replaced by module) if search is incorrect or empty
-			alert("Enter name of the Movie");
-			event.preventDefault();
-			console.log("It works");
-		} else {
-
-	// If movieName is valid, display searchHistory function
-		searchMovie(movieName);
-		searchHistory(movieName);
+	if (movieName === "" || movieName === null) {
+		//send alert (to be replaced by module) if search is incorrect or empty
+		alert("Enter name of the Movie");
+		event.preventDefault();
 		console.log("It works");
-		}
-	})
+	} else {
+
+// If movieName is valid, display searchHistory function
+	searchMovie(movieName);
+	searchHistory(movieName);
+	console.log("It works");
+	}
+});
+
+
+		
+	
 
 
 
