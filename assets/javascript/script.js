@@ -15,10 +15,7 @@ var modalBtn = document.getElementById("searchBtn");
 var spanModal = document.getElementsByClassName("close")[0]; //close modal
 
 
-
-
 //Event listener when click on the button from the search form 
-
 searchBtn.addEventListener("click", function (event){
 	event.preventDefault();
 	var movieName = document.getElementById("searchQuery").value;
@@ -41,7 +38,7 @@ searchBtn.addEventListener("click", function (event){
 	var movieName = document.getElementById("searchQuery").value;
 	movieName = movieName.trim();
 	movieName = movieName.replace(" ", "%20");
-
+	console.log(movieName);
 	videoSearch(youtubeAPIKey, movieName);
 	searchMovie(movieName);
 	searchHistory(movieName);
@@ -49,13 +46,6 @@ searchBtn.addEventListener("click", function (event){
 	}
 
 });
-
-
-		
-	
-
-
-
 
 	//  API Calls to Movie Database: this Function will make 2 API calls; from the first response we obtain the movie title and imdbIDKey, from the second call we get information about the movie like the rating and plot. This function will also display a message on the screen if the input is empty or incorrect
 
