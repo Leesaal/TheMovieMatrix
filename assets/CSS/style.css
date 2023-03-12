@@ -61,7 +61,7 @@ main {
 }
 
 button {
-    align-text:center;
+    align-text: center;
 } 
 
 /* section div input {
@@ -129,3 +129,32 @@ main {
 
 }
 
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: grey;
+    color: black;
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 40px;
+}
+
+.modal p {
+    color: black;
+}
+
+span {
+    float: right;
+    border: 1px solid black;
+    padding: 1px 6px;
+    margin-top: -30px;
+    margin-right: -30px;
+    color: black;
+    background: white;
+}
+
+span:hover {
+    box-shadow: 2px 2px 1px 0.5px black;
+}
