@@ -26,8 +26,15 @@ header h1 {
     justify-content: center;
     
     
-    
 }
+
+.home {
+    margin-left: 20px;
+}
+.container{
+margin: auto;
+}
+
 .titleContainer {
     width:60%;
 }
@@ -38,7 +45,7 @@ div header {
 	font-size:20px;
     font-weight: bold;
 	color: white;
-    align-text: center;
+    text-align: center;
 	
 }
 #moviePoster {
