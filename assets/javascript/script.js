@@ -121,6 +121,10 @@
 		});
 		
 		function videoSearch(API, search) {
+			console.log("https://www.googleapis.com/youtube/v3/search?key="
+			+ youtubeAPIKey
+			+ "&type=video&part=snippet&maxResults=1&q=movie%20trailer%20"
+			+ search)
 			fetch("https://www.googleapis.com/youtube/v3/search?key="
 			+ youtubeAPIKey
 			+ "&type=video&part=snippet&maxResults=1&q=movie%20trailer%20"
