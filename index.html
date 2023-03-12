@@ -67,40 +67,41 @@
 
 
 <!--main container to hold movie data-->
-<main class="hide in justify-center">  
+<main class="hide in justify-center mb-6"> 
+     
    
         <div class="poster">
 <!--fetch the poster image from the Movie Database API-->
             
         </div>
-    <img src="" id="moviePoster" class="block rounded w-48 mr-4" >
+    <img src="" id="moviePoster" class="block rounded-lg w-48 mr-4" >
     <section class="movieInfo inline-block">
         <div class="">
             <div class="title ml-6 mb-4 font-bold">
 <!--fetch the movie title from the Movie Database API-->
                 <p><span id="movieTitle"></span></p>
             </div>
-            <div class="plot ml-6">
+            <div class="plot ml-6 mb-6">
 <!--fetch the movie plot from the Movie Database API-->
-                <p><strong>Plot: </strong><span id="moviePlot"></span></p>
+                <p id="moviePlot"></p>
             </div>   
-            <div class="rating ml-6">
+            <div class="rating ml-6 inline-block">
 <!--fetch the movie rating from the Movie Database API-->
-                <p><strong>Movie Rating:</strong><span id="movieRating"></span> </p>
+                <p><strong>Rating: </strong><span id="movieRating"></span> </p>
                 
             </div>
-            <div class="runtime ml-6">
+            <div class="runtime ml-6 inline-block">
 <!--fetch the movie runtime from the Movie Database API-->
-                <p><strong>Movie Runtime:</strong><span id="movieRuntime"></span></p>
-            </div>
-            <div class="genre ml-6">
+                <p><strong>Runtime: </strong><span id="movieRuntime"></span></p>
+            </div> 
+            <div class="genre ml-6 inline-block">
 <!--fetch the genre from the Movie Database API-->
-                <p><strong>Movie Genre:</strong><span id="movieGenre"></span></p>
+                <p><strong>Genre: </strong><span id="movieGenre"></span></p>
             </div>
         </div> 
 <!--fetch the trailer from the Youtube API-->
 
-        <div class="trailer container flex float-center ml-52 mt-6 rounded w-1/2" id="movieTrailer" class="">
+        <div class="trailer container flex place-items-center ml-52 mt-6 rounded w-1/2" id="movieTrailer" class="">
             <iframe width="560" height="215" src="" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen id="trailer"></iframe>
@@ -116,7 +117,7 @@
         </div>
     </div>
 
-    <footer class="">
+    <footer>
         <p class = "footer">
             &copy; The Movie Matrix 2023
         </p>
