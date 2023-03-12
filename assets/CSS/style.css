@@ -91,3 +91,23 @@ footer {
     text-transform: capitalize;
 }
 
+main {
+    display: flex;
+    margin-top: 10%;
+}
+
+#moviePoster {
+    width: 30%;
+    height: 30%;
+    margin: auto;
+}
+
+.movieInfo {
+    float: right;
+    margin: 50px;
+}
+
+.trailer {
+    float: left;
+}
+
