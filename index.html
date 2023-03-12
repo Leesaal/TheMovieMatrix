@@ -68,37 +68,39 @@
 
 <!--main container to hold movie data-->
 <main class="hide in justify-center">  
-        <div class="poster w-48">
+   
+        <div class="poster">
 <!--fetch the poster image from the Movie Database API-->
             
         </div>
-    <img src="" id="moviePoster" class="block rounded w-48" >
+    <img src="" id="moviePoster" class="block rounded w-48 mr-4" >
     <section class="movieInfo inline-block">
         <div class="">
-            <div class="title">
+            <div class="title ml-6 mb-4 font-bold">
 <!--fetch the movie title from the Movie Database API-->
-                <h3 id="movieTitle"></h3>
+                <p><span id="movieTitle"></span></p>
             </div>
-            <div class="plot">
+            <div class="plot ml-6">
 <!--fetch the movie plot from the Movie Database API-->
-                <p id="moviePlot"></p>
+                <p><strong>Plot: </strong><span id="moviePlot"></span></p>
             </div>   
-            <div class="rating">
+            <div class="rating ml-6">
 <!--fetch the movie rating from the Movie Database API-->
-                <p id="movieRating"></p>
+                <p><strong>Movie Rating:</strong><span id="movieRating"></span> </p>
+                
             </div>
-            <div class="runtime">
+            <div class="runtime ml-6">
 <!--fetch the movie runtime from the Movie Database API-->
-                <p id="movieRuntime"></p>
+                <p><strong>Movie Runtime:</strong><span id="movieRuntime"></span></p>
             </div>
-            <div class="genre">
+            <div class="genre ml-6">
 <!--fetch the genre from the Movie Database API-->
-                <p id="movieGenre"></p>
+                <p><strong>Movie Genre:</strong><span id="movieGenre"></span></p>
             </div>
         </div> 
 <!--fetch the trailer from the Youtube API-->
 
-        <div class="trailer container flex float-right rounded w-1/3" id="movieTrailer" class="">
+        <div class="trailer container flex float-center ml-52 mt-6 rounded w-1/2" id="movieTrailer" class="">
             <iframe width="560" height="215" src="" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen id="trailer"></iframe>
@@ -116,7 +118,7 @@
 
     <footer class="">
         <p class = "footer">
-            &lt;&lt;&lt;&copy; The Movie Matrix &gt;&gt;&gt;
+            &copy; The Movie Matrix 2023
         </p>
     </footer>
 
