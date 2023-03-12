@@ -9,44 +9,45 @@ var movieGenre = document.getElementById('movieGenre');
 var main = document.querySelector('main');
 var posterURL = "https://image.tmdb.org/t/p/w500/";
 savedSearches= [];
+// modal variables
+var modal = document.querySelector(".modal");
+var modalBtn = document.getElementById("searchBtn");
+var spanModal = document.getElementsByClassName("close")[0]; //close modal
 
 
 
 
-	//Event listener when click on the button from the search form 
+//Event listener when click on the button from the search form 
 
-	searchBtn.addEventListener("click", function (event){
+searchBtn.addEventListener("click", function (event){
+	event.preventDefault();
+	var movieName = document.getElementById("searchQuery").value;
+
+//show modal if search is empty
+	if (movieName === "" || movieName === null) {
+		modal.classList.remove("hide");
+
+		// When the user clicks on <span> (x), close the modal
+		spanModal.onclick = function() {
+		modal.classList.add("hide");
+		}
+
 		event.preventDefault();
-		
+	} else {
 
-
-
-		var movieName = document.getElementById("searchQuery").value;
-
-
-// unhide main to show movie elements
-
+// If movieName is valid, display searchHistory function, create movieName variable to call movie data functions and unhide main to show movie elements
 	main.classList.remove("hide");
-
-// create movieName variable to push through to videoDisplay function
 
 	var movieName = document.getElementById("searchQuery").value;
 	movieName = movieName.trim();
 	movieName = movieName.replace(" ", "%20");
+
 	videoSearch(youtubeAPIKey, movieName);
-
-	if (movieName === "" || movieName === null) {
-		//send alert (to be replaced by module) if search is incorrect or empty
-		alert("Enter name of the Movie");
-		event.preventDefault();
-		console.log("It works");
-	} else {
-
-// If movieName is valid, display searchHistory function
 	searchMovie(movieName);
 	searchHistory(movieName);
-	console.log("It works");
+
 	}
+
 });
 
 
@@ -59,7 +60,7 @@ savedSearches= [];
 	//  API Calls to Movie Database: this Function will make 2 API calls; from the first response we obtain the movie title and imdbIDKey, from the second call we get information about the movie like the rating and plot. This function will also display a message on the screen if the input is empty or incorrect
 
 	function searchMovie (movieName){
-		// Options object witht the headers to access RapidAPI and Movie Database
+		// Options object with the headers to access RapidAPI and Movie Database
 		const options = {
 			method: 'GET',
 			headers: {
@@ -67,61 +68,52 @@ savedSearches= [];
 				'X-RapidAPI-Host': 'movie-database-alternative.p.rapidapi.com'
 			}	
 		};	
+
 	// Create function to amend user input into url friendly format
-			var imdbIDKey;
-			movieName = movieName.trim(); //Trim whitespaces from the query
-			movieName = movieName.replace(" ", "%20"); // Replaces spaces with %20
-			console.log(movieName);
+		var imdbIDKey;
+		movieName = movieName.trim(); //Trim whitespaces from the query
+		movieName = movieName.replace(" ", "%20"); // Replaces spaces with %20
 		
 	// First API call to The Movie Database for Title and imdbID
 		fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 		+ movieName 
 		+ "&r=json&page=1", options)
-		// console.log(options);
 		
 	// Parse the response to json
 		.then(function (response) {
 			return response.json();
 		})
 		.then(function (data) {
-			console.log(data);
 		
 	// Get Title from the first Search result
-			var movieTitleResults = data.Search[0].Title;
-			console.log(movieTitleResults);
-		
+		var movieTitleResults = data.Search[0].Title;
+
 	// Get the imdbIDKey from the first Search result
-		
-			var imdbIDKey = data.Search[0].imdbID;
-			console.log(imdbIDKey);	
+		var imdbIDKey = data.Search[0].imdbID;
 		
 	// Second API call to The Movie Database
+		var secondAPIKey = "97c267f9a2d9d89d1419f2261423af96";
 		
-				var secondAPIKey = "97c267f9a2d9d89d1419f2261423af96";
-		
-				fetch("https://api.themoviedb.org/3/movie/"
-				+ imdbIDKey
-				+ "?api_key="
-				+ secondAPIKey
-				+ "&language=en-US")
+		fetch("https://api.themoviedb.org/3/movie/"
+		+ imdbIDKey
+		+ "?api_key="
+		+ secondAPIKey
+		+ "&language=en-US")
 		
 	// Parse the response to json
-				.then(function (response) {
-					return response.json();
-				})
-				.then(function (data) {
-					console.log(data);
+		.then(function (response) {
+			return response.json();
+		})
+		.then(function (data) {
 		
 	// Get Movie Title, Genre, Plot, Rating and Runtime from the fetch response
 		
-			movieTitle.textContent ="Movie Title: " + data.original_title;
-			movieGenre.textContent = "Genre: " + data.genres[0].name;
-			moviePlot.textContent = "Plot: " + data.overview;
-			console.log(moviePlot);
-			movieRating.textContent = "Rating: " + Math.round(data.popularity)+ "%";
-			console.log(movieRating);
-			movieRuntime.textContent ="Runtime: " + data.runtime + " minutes";
-			moviePoster.setAttribute("src",posterURL+data.poster_path);	
+		movieTitle.textContent ="Movie Title: " + data.original_title;
+		movieGenre.textContent = "Genre: " + data.genres[0].name;
+		moviePlot.textContent = "Plot: " + data.overview;
+		movieRating.textContent = "Rating: " + Math.round(data.popularity)+ "%";
+		movieRuntime.textContent ="Runtime: " + data.runtime + " minutes";
+		moviePoster.setAttribute("src",posterURL+data.poster_path);	
 		});
 		});
 		};
@@ -131,7 +123,7 @@ savedSearches= [];
 
 		// API Call to get Video Trailer //
 
-		var youtubeAPIKey = "AIzaSyDHsLb_SBg7wWIzPQuf-8DLQcGRS7oOHrY";
+		var youtubeAPIKey = "AIzaSyDM84Q5kKRoiKTM5XfoP7L8PCpL5im6eXU";
 		searchBtn.addEventListener("click", function(event) {
 			event.preventDefault();
 		
@@ -142,10 +134,6 @@ savedSearches= [];
 		});
 		
 		function videoSearch(API, search) {
-			console.log("https://www.googleapis.com/youtube/v3/search?key="
-			+ youtubeAPIKey
-			+ "&type=video&part=snippet&maxResults=1&q=movie%20trailer%20"
-			+ search)
 			fetch("https://www.googleapis.com/youtube/v3/search?key="
 			+ youtubeAPIKey
 			+ "&type=video&part=snippet&maxResults=1&q=movie%20trailer%20"
@@ -153,7 +141,6 @@ savedSearches= [];
 			)
 		
 			.then(response => response.json())
-		
 			.then(data => this.displayVideo(data));
 		}
 		
