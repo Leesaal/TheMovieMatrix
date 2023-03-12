@@ -22,7 +22,12 @@ var youtubeAPIKey = "AIzaSyDHsLb_SBg7wWIzPQuf-8DLQcGRS7oOHrY";
 searchBtn.addEventListener("click", function(event) {
 	event.preventDefault();
 
+
+// unhide main to show movie elements
+
 	main.classList.remove("hide");
+
+// create movieName variable to push through to videoDisplay function
 
 	var movieName = document.getElementById("searchQuery").value;
 	movieName = movieName.trim();
