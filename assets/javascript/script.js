@@ -56,10 +56,7 @@ searchBtn.addEventListener("click", function (event){
 			}	
 		};	
 
-	// Create function to amend user input into url friendly format
-		var imdbIDKey;
-		movieName = movieName.trim(); //Trim whitespaces from the query
-		movieName = movieName.replace(" ", "%20"); // Replaces spaces with %20
+
 		
 	// First API call to The Movie Database for Title and imdbID
 
