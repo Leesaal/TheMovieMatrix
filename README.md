@@ -20,6 +20,9 @@ This site will save recent searches in the local storage for efficient searching
 ## API
 [The Movie Database](https://www.themoviedb.org/?language=en-GB)
 
+
+[Movie Database Alternative](https://rapidapi.com/rapidapi/api/movie-database-alternative/details)
+
 [YouTube Data Api](https://developers.google.com/youtube/v3)
 
 ## Deployment
