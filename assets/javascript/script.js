@@ -9,39 +9,40 @@ var movieGenre = document.getElementById('movieGenre');
 var main = document.querySelector('main');
 var posterURL = "https://image.tmdb.org/t/p/w500/";
 savedSearches= [];
-// modal variables
+// Modal variables
 var modal = document.querySelector(".modal");
 var modalBtn = document.getElementById("searchBtn");
 var spanModal = document.getElementsByClassName("close")[0]; //close modal
 
 
-//Event listener when click on the button from the search form 
+
+// Event listener when click on the button from the search form 
 searchBtn.addEventListener("click", function (event){
 	event.preventDefault();
+// Create movieName variable to get user's input value
 	var movieName = document.getElementById("searchQuery").value;
 
-//show modal if search is empty
+// Show modal if search is empty or invalid
 	if (movieName === "" || movieName === null) {
 		modal.classList.remove("hide");
 
 		// When the user clicks on <span> (x), close the modal
 		spanModal.onclick = function() {
 		modal.classList.add("hide");
-		
 		}
 
 		event.preventDefault();
 	} else {
 
-// If movieName is valid, display searchHistory function, create movieName variable to call movie data functions and unhide main to show movie elements
+// If movieName is valid, call searchMovie function and unhide main to show movie elements
 	main.classList.remove("hide");
 
 	searchMovie(movieName);
-	
 
 	}
-
 });
+
+
 
 	//  API Calls to Movie Database: this Function will make 2 API calls; from the first response we obtain the movie title and imdbIDKey, from the second call we get information about the movie like the rating and plot. This function will also display a message on the screen if the input is empty or incorrect
 
@@ -117,6 +118,8 @@ searchBtn.addEventListener("click", function (event){
 		}}
 		)};
 	
+
+
 		// API Call to get Video Trailer //
 
 		var youtubeAPIKey = "AIzaSyCwgbAu1Gc2IwjwgERI4QF7O9pogMLMmo4";
@@ -142,8 +145,7 @@ searchBtn.addEventListener("click", function (event){
 		
 		function displayVideo(data) {
 			var { videoId } = data.items[0].id;
-			document.getElementById("trailer").src = 'https://www.youtube.com/embed/' + videoId ;
-			
+			document.getElementById("trailer").src = 'https://www.youtube.com/embed/' + videoId ;		
 		}
 
 
