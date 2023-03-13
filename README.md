@@ -23,18 +23,28 @@ This site will save recent searches in the local storage for efficient searching
 [YouTube Data Api](https://developers.google.com/youtube/v3)
 
 ## Deployment
-[Link to The Movie Matrix:]()
+[Link to The Movie Matrix]()
 
-[Link to GitHub:](https://github.com/Leesaal/TheMovieMatrix)
+[Link to GitHub](https://github.com/Leesaal/TheMovieMatrix)
 
 ## Final Result
 (Screenshots)
 
 ## User Story
-AS A movie lover,
-I WANT one site to search a movie and see information on it's ratings and trailer
-TO see if it's a movie I want to watch.
+As a movie lover,
+
+I want to visit an online site to search a movie by it's title and see information on it's ratings and trailer,
+
+So that with that informationI can decide if I want to watch it.
 
 ## Authors
+[Leesa Ali](https://github.com/Leesaal)
+
+[Carmela Rey](https://github.com/Cdrcar)
+
+[Iman Jama](https://github.com/Iman-Jama)
+
+[Yvonne Salmon](https://github.com/SalmY001)
+
 
 ## License
