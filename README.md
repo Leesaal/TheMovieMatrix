@@ -28,7 +28,7 @@ This site will save recent searches in the local storage for efficient searching
 [Link to GitHub](https://github.com/Leesaal/TheMovieMatrix)
 
 ## Final Result
-(Screenshots)
+![The Movie Matrix Screenshot](https://user-images.githubusercontent.com/118930290/224797331-2353c4da-3692-4839-b4a2-e0cc72b2fd24.png)
 
 ## User Story
 As a movie lover,
