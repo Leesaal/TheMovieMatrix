@@ -1,12 +1,10 @@
 # The Movie Matrix 🎬
 
 ## Description
-This is a movie search engine that allows the user to input the name of a movie and as a result it will display reselvant information about the movie such as:
-- Release year
+This is a movie search engine that allows the user to input the name of a movie and as a result it will display relevant information about the movie such as:
 - Ratings
 - Plot summary
 - Genre 
-- Actors
 - Movie poster
 - Movie trailer 
 
