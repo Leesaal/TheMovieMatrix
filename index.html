@@ -4,49 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/CSS/style.css" />
+    <!-- CSS link to local file-->
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>The Movie Matrix</title>
 </head>
+
+
+<!-- Body -->
+
 <body class="bg-zinc-900 px-8 py-6">
-
-<!--header-->
-
-<!--navigation-->
+<!--Navigation bar with an title, subtitle, logo and menu-->
 <nav class="relative container mt-5 mb-1">
-    <!--flex container-->
     <div class="flex items-center justify-between">
-        <!--logo-->
+        <!--Logo-->
         <div class="p-2">
             <img src="assets/images/Logo-image.png" height="40px" width="60px"alt="">
         </div>
+        <!--Header-->
         <header>
             <div class="grid item-start justify-center">
                 <h1 class ="text-white flex " id="title">The Movie Matrix</h1>
                 <h3>Search here for a movie</h3>
                 <br>
             </div>
-                
             </header>
-        <!--menu item-->
+        <!--Menu item-->
         <div class="hidden md:flex space-x-6 home">
             <a href="#" class="font-bold hover:text-slate-600 ">Home</a>
         </div>
     </div>
 </nav>
-    <div>
-        <!-- <header>
-        <div class="grid item-start justify-center titleContainer">
-            <h1 class ="text-white flex" id="title">The Movie Matrix</h1>
-            <h3>Search here for a movie</h3>
-            <br>
-        </div>
-            
-        </header> -->
 
+
+
+    <!-- Input form and button-->
+
+    <div>
         <section id="hero" class="flex">
             <div class="container">
-                <form id="form">
-                    
+                <form id="form">         
                 <div class="grid gap-4 item-start justify-center">
                     <div class="relative">
                         <div class="absolute -inset-1 bg-gradient-to-r from-pink-600 to-blue-600 rounded-lg blur opacity-75 hover:opacity-100 -inset-2 transition duration-1000"></div>
@@ -57,51 +53,47 @@
                     <div id="search-history-container" class="row m-0 search-history-container"></div>
                 </div>
                 </div>
-                </form>
-                
-            </div>
-            
+                </form>        
+            </div>  
         </section>
-</div>
+    </div>
    
 
 
-<!--main container to hold movie data-->
+<!--Main container to hold movie data-->
+
 <main class="hide in justify-center mb-6"> 
-     
-   
         <div class="poster">
-<!--fetch the poster image from the Movie Database API-->
-            
+<!--Fetch the poster image from the Movie Database API-->      
         </div>
+
     <img src="" id="moviePoster" class="block rounded-lg w-48 mr-4" >
+<!-- Section for Movie Information-->
     <section class="movieInfo inline-block">
         <div class="">
             <div class="title ml-6 mb-4 font-bold">
-<!--fetch the movie title from the Movie Database API-->
+<!--Fetch the movie title from the Movie Database API-->
                 <p><span id="movieTitle"></span></p>
             </div>
             <div class="plot ml-6 mb-6">
-<!--fetch the movie plot from the Movie Database API-->
+<!--Fetch the movie plot from the Movie Database API-->
                 <p id="moviePlot"></p>
             </div>   
             <div class="rating ml-6 inline-block">
-<!--fetch the movie rating from the Movie Database API-->
-                <p><strong>Rating: </strong><span id="movieRating"></span> </p>
-                
+<!--Fetch the movie rating from the Movie Database API-->
+                <p><strong>Rating: </strong><span id="movieRating"></span> </p>              
             </div>
             <div class="runtime ml-6 inline-block">
-<!--fetch the movie runtime from the Movie Database API-->
+<!--Fetch the movie runtime from the Movie Database API-->
                 <p><strong>Runtime: </strong><span id="movieRuntime"></span></p>
             </div> 
             <div class="genre ml-6 inline-block">
-<!--fetch the genre from the Movie Database API-->
+<!--Fetch the genre from the Movie Database API-->
                 <p><strong>Genre: </strong><span id="movieGenre"></span></p>
             </div>
         </div> 
-<!--fetch the trailer from the Youtube API-->
-
-        <div class="trailer container flex place-items-center ml-52 mt-6 rounded w-1/2" id="movieTrailer" class="">
+<!--Fetch the trailer from the Youtube API-->
+         <div class="trailer container flex place-items-center ml-52 mt-6 rounded w-1/2" id="movieTrailer" class="">
             <iframe width="560" height="215" src="" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen id="trailer"></iframe>
@@ -109,13 +101,20 @@
     </section>
     </main>
 
-<!--modal message if user enters a film name that does not exist-->
+
+
+<!--Modal message if user enters a film name that does not exist-->
+
     <div class="modal hide" id="modal">
         <div class="modalInfo">
             <span class="close">&times;</span>
-            <p>Enter a valid movie name.</p>
+            <p>Enter a valid movie name</p>
         </div>
     </div>
+
+
+
+<!-- Footer -->
 
     <footer>
         <p class = "footer">
@@ -123,7 +122,10 @@
         </p>
     </footer>
 
+    
+<!-- Script link to local file-->
     <script src="assets/javascript/script.js"></script>
+<!-- Tailwindcss link-->
     <script src="https://cdn.tailwindcss.com"></script>
     
 </body>
