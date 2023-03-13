@@ -50,9 +50,7 @@ div header {
     text-align: center;
 	
 }
-#moviePoster {
-    margin-right:0px;
-}
+
 
 main {
     font-size: large
@@ -115,7 +113,7 @@ main {
 #moviePoster {
     width: 30%;
     height: 30%;
-    margin: auto;
+    margin-right:0px;
 } 
 
 .movieInfo {
@@ -165,4 +163,12 @@ main {
 
 #movieTitle {
     font-size: 26px;
+}
+
+@media only screen and (max-width: 800px) {
+    main {
+        display: block;
+        margin: 0 auto;
+        
+    }
 }
