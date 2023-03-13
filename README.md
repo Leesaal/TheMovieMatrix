@@ -31,7 +31,7 @@ This site will save recent searches in the local storage for efficient searching
 [Link to GitHub](https://github.com/Leesaal/TheMovieMatrix)
 
 ## Final Result
-(Screenshots)
+![Final Result](./assets/images/final-result-01.png)
 
 ## User Story
 As a movie lover,
