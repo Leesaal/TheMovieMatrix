@@ -56,30 +56,11 @@ main {
     font-size: large
 }
 
+
+
 button {
     text-align: left;
 } 
-
-/* section div input {
-    
-	align-items: center;
-	height:50%;
-	width:45%;
-	background:rgba(3, 36, 50, 0.347);
-	border:3px solid rgb(177, 173, 230);
-	border-radius: 5px;
-	left:50%;
-	transform: translateX(-50%);
-    font-size: 20px;
-	
-
-}
-
-#buttonstyle {
-    height:50%;
-	width:45%;
-    align-items: center;
-}*/
 
 
 
@@ -99,10 +80,15 @@ footer {
     text-transform: capitalize;
 }
 
+.image-box{
+    max-width: 300px;
+    margin: 20px auto;
 
+}
 main {
     display: flex;
     margin-top: 10%;
+    flex-direction: column;
 }
 
 .footer {
@@ -111,18 +97,20 @@ main {
 }
 
 #moviePoster {
-    width: 30%;
-    height: 30%;
-    margin-right:0px;
+    
+    width: 100%;
+
 } 
 
 .movieInfo {
-    float: right;
+    /* float: right; */
+    display: flex;
+    
     
 }
 
 .trailer {
-    float: left;
+   margin: 32px auto;
 
 }
 
@@ -165,10 +153,11 @@ main {
     font-size: 26px;
 }
 
-@media only screen and (max-width: 800px) {
-    main {
-        display: block;
+@media only screen and (max-width: 1092px) {
+    .movieInfo {
+        flex-direction: column;
         margin: 0 auto;
         
     }
 }
+

@@ -70,14 +70,14 @@
 
 <!--Main container to hold movie data-->
 
-<main class="hide in justify-center mb-6"> 
-        <div class="poster">
-<!--Fetch the poster image from the Movie Database API-->      
-        </div>
-
-    <img src="" id="moviePoster" class="block rounded-lg w-48  sm: ml-5" >
+<main class="hide in mb-6 items-center"> 
+        
 <!-- Section for Movie Information-->
-    <section class="movieInfo inline-block">
+    <section class="movieInfo">
+<!--Fetch the poster image from the Movie Database API--> 
+        <div class="image-box ml-5">
+        <img src="" id="moviePoster" class="block rounded-lg " >
+    </div>
         <div class="">
             <div class="title ml-6 mb-4 font-bold">
 <!--Fetch the movie title from the Movie Database API-->
@@ -101,12 +101,13 @@
             </div>
         </div> 
 <!--Fetch the trailer from the Youtube API-->
-         <div class="trailer container flex place-items-center ml-5 mt-6 rounded w-1/2" id="movieTrailer" class="">
-            <iframe width="560" height="215" src="" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen id="trailer"></iframe>
-        </div>
     </section>
+    
+    <div class="trailer container self-center items-center flex rounded w-1/2" id="movieTrailer">
+        <iframe width="560" height="215" src="" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen id="trailer"></iframe>
+    </div>
     </main>
 
 
