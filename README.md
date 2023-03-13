@@ -25,7 +25,7 @@ This site will save recent searches in the local storage for efficient searching
 ## Deployment
 [Link to The Movie Matrix:]()
 
-[Link to GitHub:]()
+[Link to GitHub:](https://github.com/Leesaal/TheMovieMatrix)
 
 ## Final Result
 (Screenshots)
