@@ -2,8 +2,6 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color-scheme: dark;
     color:white;
-
-  
 }
 body {
     min-height: 100vh; 
@@ -25,9 +23,8 @@ header h1 {
     font-weight: bolder;
     align-items: center;
     justify-content: center;
-    
-    
 }
+
 
 .home {
     margin-left: 20px;
@@ -112,6 +109,7 @@ main {
 
 .footer {
     text-align:center;
+    font-size: 12px;
 }
 
 #moviePoster {
@@ -160,11 +158,7 @@ main {
     box-shadow: 2px 2px 1px 0.5px black;
 }
 
-p {
-
-}
 
 #movieTitle {
     font-size: 26px;
-    font-style:
 }
