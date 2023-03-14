@@ -100,6 +100,7 @@ searchBtn.addEventListener("click", function (event){
 		movieGenre.textContent = data.genres[0].name;
 		moviePlot.textContent = data.overview;
 		movieRating.textContent = Math.round(data.popularity)+ "%";
+		
 		movieRuntime.textContent = data.runtime + " minutes";
 		moviePoster.setAttribute("src",posterURL+data.poster_path);	
 		videoSearch(youtubeAPIKey, movieName);
