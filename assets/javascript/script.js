@@ -58,7 +58,7 @@ searchBtn.addEventListener("click", function (event){
 
 
 		
-	// First API call to The Movie Database for Title and imdbID
+	// First API call to The Movie Database Alternative for Title and imdbID
 
 	fetch("https://movie-database-alternative.p.rapidapi.com/?s="
 		+ movieName 
