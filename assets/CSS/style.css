@@ -84,12 +84,16 @@ footer {
 .past-search:hover {
     border-radius: 10px;
     border: 0.5px solid white;
+    cursor:grab;
 }
 
 .image-box{
-    max-width: 300px;
+    /* max-width: 600px; */
     margin: 20px auto;
 
+}
+.movieMetaData {
+    max-width:80%;
 }
 main {
     display: flex;
@@ -117,6 +121,7 @@ main {
 
 .trailer {
    margin: 32px auto;
+   
 
 }
 
