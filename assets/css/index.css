@@ -52,11 +52,6 @@ div header {
 }
 
 
-main {
-    font-size: large
-}
-
-
 
 button {
     text-align: left;
@@ -88,7 +83,7 @@ footer {
 }
 
 .image-box{
-    /* max-width: 600px; */
+    
     margin: 20px auto;
 
 }
@@ -99,6 +94,7 @@ main {
     display: flex;
     margin-top: 10%;
     flex-direction: column;
+    font-size: large
 }
 
 .footer {
@@ -113,7 +109,7 @@ main {
 } 
 
 .movieInfo {
-    /* float: right; */
+ 
     display: flex;
     
     
@@ -124,7 +120,6 @@ main {
    align-items: center;
    justify-content: center;
    
-
 }
 
 .modal {
