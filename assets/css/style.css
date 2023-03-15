@@ -1,0 +1,174 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color-scheme: dark;
+    color:white;
+}
+body {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    background-image:linear-gradient(rgba(9, 9, 70, 0.896),rgb(56, 95, 116), rgb(0, 14, 87)); 
+}
+
+a {
+    font-size: 14px;
+}
+
+a:hover {
+    font-size: 16px;
+    
+}
+header h1 {
+    font-size: 50px;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.home {
+    margin-left: 20px;
+}
+.container{
+margin: auto;
+}
+
+.titleContainer {
+    width:60%;
+}
+
+.relative  {
+    width: 300px;
+}
+div header {
+    
+	width:100%;
+	text-align: center;
+	font-size:20px;
+    font-weight: bold;
+	color: white;
+    text-align: center;
+	
+}
+
+
+main {
+    font-size: large
+}
+
+
+
+button {
+    text-align: left;
+} 
+
+
+
+footer {
+    margin-top:auto;
+    width: 100%;
+    height: 0.5rem;
+   
+} 
+
+.hide {
+    display: none;
+} 
+
+
+#search-history-container {
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.past-search:hover {
+    border-radius: 10px;
+    border: 0.5px solid white;
+    cursor:grab;
+}
+
+.image-box{
+    /* max-width: 600px; */
+    margin: 20px auto;
+
+}
+.movieMetaData {
+    max-width:80%;
+}
+main {
+    display: flex;
+    margin-top: 10%;
+    flex-direction: column;
+}
+
+.footer {
+    text-align:center;
+    font-size: 12px;
+}
+
+#moviePoster {
+    
+    width: 100%;
+
+} 
+
+.movieInfo {
+    /* float: right; */
+    display: flex;
+    
+    
+}
+
+.trailer {
+   margin: 32px auto;
+   
+
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(75, 131, 176);
+    font-size: 13px;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal p {
+    color: black;
+}
+
+.modalInfo span {
+    float: right;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1px 6px;
+    margin-top: -25px;
+    margin-right: -25px;
+    color: black;
+    background: white;
+    
+}
+
+.modalInfo span:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(26, 72, 100);
+    color: white;
+}
+
+
+#movieTitle {
+    font-size: 26px;
+}
+
+@media only screen and (max-width: 1092px) {
+    .movieInfo {
+        flex-direction: column;
+        margin: 0 auto;
+        
+    }
+}
+

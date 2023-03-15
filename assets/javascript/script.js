@@ -71,8 +71,6 @@ searchBtn.addEventListener("click", function (event){
 			
 		})
 		.then(function (data) {
-			
-			
 
 	// check input is valid
 			if (data.hasOwnProperty("Search")) {
@@ -100,7 +98,7 @@ searchBtn.addEventListener("click", function (event){
 			
 		
 	// Get Movie Title, Genre, Plot, Rating and Runtime from the fetch response
-		
+		console.log(data);
 		movieTitle.textContent =data.original_title;
 		movieGenre.textContent = data.genres[0].name;
 		moviePlot.textContent = data.overview;
