@@ -40,7 +40,7 @@ As a movie lover,
 
 I want to visit an online site to search a movie by it's title and see information on it's ratings and trailer,
 
-So that with that informationI can decide if I want to watch it.
+So that with that information I can decide if I want to watch it.
 
 ## Authors
 [Leesa Ali](https://github.com/Leesaal)
@@ -53,3 +53,5 @@ So that with that informationI can decide if I want to watch it.
 
 
 ## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
